@@ -1,6 +1,7 @@
 package sopra.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,14 +29,29 @@ public class Ville {
 			name = "aeroportVille", 
 			joinColumns = @JoinColumn(name = "ville_id", referencedColumnName = "id" ),
 			inverseJoinColumns = @JoinColumn(name = "aeroport_id", referencedColumnName = "id"))
-	private ArrayList<Aeroport> aeroport = new ArrayList<Aeroport>();
+	private List<Aeroport> aeroport = new ArrayList<Aeroport>();
 	
 	
 	
-	public ArrayList<Aeroport> getAeroport() {
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public Ville() {
+		super();
+	}
+	public List<Aeroport> getAeroport() {
 		return aeroport;
 	}
-	public void setAeroport(ArrayList<Aeroport> aeroport) {
+	public void setAeroport(List<Aeroport> aeroport) {
 		this.aeroport = aeroport;
 	}
 	public String getCodePostal() {

@@ -1,7 +1,9 @@
 package sopra.model;
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
+@Entity
 @DiscriminatorValue("professionnel")
 public class ClientProfessionnel extends Client{
 
@@ -9,6 +11,9 @@ public class ClientProfessionnel extends Client{
 	private String tva;
 	
 	
+	public ClientProfessionnel() {
+		super();
+	}
 	public ClientProfessionnel(String siret, String tva) {
 		this.siret = siret;
 		this.tva = tva;

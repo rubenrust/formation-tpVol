@@ -1,6 +1,7 @@
 package sopra.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,17 +23,38 @@ public class CompagnieVol {
 	private int version;
 	private String numero;
 	@OneToMany(mappedBy = "compagnieVol")
-	private ArrayList<Vol> vols = new ArrayList<Vol>();
+	private List<Vol> vols = new ArrayList<Vol>();
 	@ManyToOne
 	@JoinColumn(name = "compagnie_id")
 	private Compagnie compagnie;
 
+	
 
-	public ArrayList<Vol> getVols() {
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public CompagnieVol() {
+		super();
+	}
+
+	public List<Vol> getVols() {
 		return vols;
 	}
 
-	public void setVols(ArrayList<Vol> vols) {
+	public void setVols(List<Vol> vols) {
 		this.vols = vols;
 	}
 

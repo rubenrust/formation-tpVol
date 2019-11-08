@@ -1,6 +1,7 @@
 package sopra.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -24,12 +25,16 @@ public class Compagnie {
 	@Embedded
 	private Coordonnee coordonnees;
 	@OneToMany(mappedBy = "compagnie")
-	private ArrayList<CompagnieVol> compagniesVols = new ArrayList<CompagnieVol>();
+	private List<CompagnieVol> compagniesVols = new ArrayList<CompagnieVol>();
 	
-	public ArrayList<CompagnieVol> getCompagniesVols() {
+	
+	public Compagnie() {
+		super();
+	}
+	public List<CompagnieVol> getCompagniesVols() {
 		return compagniesVols;
 	}
-	public void setCompagniesVols(ArrayList<CompagnieVol> compagniesVols) {
+	public void setCompagniesVols(List<CompagnieVol> compagniesVols) {
 		this.compagniesVols = compagniesVols;
 	}
 	public String getNom() {
@@ -49,6 +54,18 @@ public class Compagnie {
 	}
 	public void setCoordonnees(Coordonnee coordonnees) {
 		this.coordonnees = coordonnees;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	

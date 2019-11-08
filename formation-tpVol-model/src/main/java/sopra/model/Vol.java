@@ -2,6 +2,7 @@ package sopra.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,13 +33,24 @@ public class Vol {
 	@JoinColumn(name = "arrivee_id")
 	private Aeroport arrivee;
 	@OneToMany(mappedBy = "vol")
-	private ArrayList<Escale> escales = new ArrayList<Escale>();
+	private List<Escale> escales = new ArrayList<Escale>();
 	@OneToMany(mappedBy = "vol")
-	private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 	@ManyToOne
 	@JoinColumn(name = "compagnieVol_id")
 	private CompagnieVol compagnieVol;
 	
+	
+	
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public Vol() {
+		super();
+	}
 	public Aeroport getDepart() {
 		return depart;
 	}
@@ -51,16 +63,16 @@ public class Vol {
 	public void setArrivee(Aeroport arrivee) {
 		this.arrivee = arrivee;
 	}
-	public ArrayList<Escale> getEscales() {
+	public List<Escale> getEscales() {
 		return escales;
 	}
-	public void setEscales(ArrayList<Escale> escales) {
+	public void setEscales(List<Escale> escales) {
 		this.escales = escales;
 	}
-	public ArrayList<Reservation> getReservations() {
+	public List<Reservation> getReservations() {
 		return reservations;
 	}
-	public void setReservations(ArrayList<Reservation> reservations) {
+	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
 	

@@ -15,6 +15,10 @@ public class Coordonnee {
 	
 	
 	
+	public Coordonnee() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Coordonnee [ville=" + ville + ", rue=" + rue + ", complement=" + complement + ", tel=" + tel + ", mail="

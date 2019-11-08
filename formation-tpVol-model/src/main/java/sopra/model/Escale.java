@@ -28,6 +28,21 @@ public class Escale {
 	@JoinColumn(name = "aeroport_id")
 	private Aeroport aeroport;
 	
+	public Long getId() {
+		return Id;
+	}
+	public void setId(Long id) {
+		Id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public Escale() {
+		super();
+	}
 	public Vol getVol() {
 		return vol;
 	}

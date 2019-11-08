@@ -34,6 +34,21 @@ public class Passager {
 	
 	
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public Passager() {
+		super();
+	}
 	@Override
 	public String toString() {
 		return "Passager [nom=" + nom + ", prenom=" + prenom + ", dtNaissance=" + dtNaissance + ", nationalite="

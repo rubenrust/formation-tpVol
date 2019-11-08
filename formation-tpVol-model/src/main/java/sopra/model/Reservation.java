@@ -35,6 +35,26 @@ public class Reservation {
 	private Passager passager;
 	
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public Reservation() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Reservation [nbReservation=" + nbReservation + ", statut=" + statut + ", prix=" + prix + ", place="
