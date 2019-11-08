@@ -1,0 +1,14 @@
+
+formation-tpVol-dataJpa/.classpath
+
+formation-tpVol-dataJpa/.project
+
+formation-tpVol-model/.project
+
+formation-tpVol-model/.classpath
+
+formation-tpVol-model/.settings/
+
+formation-tpVol-dataJpa/.settings/
+
+*.class
