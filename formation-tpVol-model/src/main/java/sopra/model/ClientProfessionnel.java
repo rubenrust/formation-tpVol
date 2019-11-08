@@ -1,5 +1,8 @@
-package tpVol;
+package sopra.model;
 
+import javax.persistence.DiscriminatorValue;
+
+@DiscriminatorValue("professionnel")
 public class ClientProfessionnel extends Client{
 
 	private String siret;

@@ -1,19 +1,42 @@
-package tpVol;
+package sopra.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table
 public class Ville {
 
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
 	private String codePostal;
 	private String pays;
 	private String nom;
-	private ArrayList<Aeroport> possede = new ArrayList<Aeroport>();
+	@ManyToMany
+	@JoinTable(
+			name = "aeroportVille", 
+			joinColumns = @JoinColumn(name = "ville_id", referencedColumnName = "id" ),
+			inverseJoinColumns = @JoinColumn(name = "aeroport_id", referencedColumnName = "id"))
+	private ArrayList<Aeroport> aeroport = new ArrayList<Aeroport>();
 	
-	public ArrayList<Aeroport> getPossede() {
-		return possede;
+	
+	
+	public ArrayList<Aeroport> getAeroport() {
+		return aeroport;
 	}
-	public void setPossede(ArrayList<Aeroport> possede) {
-		this.possede = possede;
+	public void setAeroport(ArrayList<Aeroport> aeroport) {
+		this.aeroport = aeroport;
 	}
 	public String getCodePostal() {
 		return codePostal;

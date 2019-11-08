@@ -2,13 +2,31 @@ package sopra.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table
 public class Aeroport {
 
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private String identifiant;
+	@Embedded
 	private Coordonnee coordonnees;
+	@ManyToMany(mappedBy = "aeroport")
 	private ArrayList<Ville> dessert = new ArrayList<Ville>();
+	@OneToMany(mappedBy = "aeroport")
 	private ArrayList<Escale> escales = new ArrayList<Escale>();
 	
 	public ArrayList<Ville> getDessert() {

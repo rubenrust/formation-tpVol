@@ -1,5 +1,8 @@
-package tpVol;
+package sopra.model;
 
+import javax.persistence.DiscriminatorValue;
+
+@DiscriminatorValue("particulier")
 public class ClientParticulier extends Client{
 
 	private String prenom;

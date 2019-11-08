@@ -1,17 +1,39 @@
-package tpVol;
+package sopra.model;
 
+import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table
 public class CompagnieVol {
 
+	@Id
+	@GeneratedValue
+	private Long Id;
+	@Version
+	private int version;
 	private String numero;
-	private Vol vol;
+	@OneToMany(mappedBy = "compagnieVol")
+	private ArrayList<Vol> vols = new ArrayList<Vol>();
+	@ManyToOne
+	@JoinColumn(name = "compagnie_id")
 	private Compagnie compagnie;
 
-	public Vol getVol() {
-		return vol;
+
+	public ArrayList<Vol> getVols() {
+		return vols;
 	}
 
-	public void setVol(Vol vol) {
-		this.vol = vol;
+	public void setVols(ArrayList<Vol> vols) {
+		this.vols = vols;
 	}
 
 	public Compagnie getCompagnie() {

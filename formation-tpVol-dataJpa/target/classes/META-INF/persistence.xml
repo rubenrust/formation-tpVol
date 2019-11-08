@@ -6,6 +6,18 @@
 	<persistence-unit name="formation-tpVol"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<class>sopra.model.Aeroport</class>
+		<class>sopra.model.Client</class>
+		<class>sopra.model.ClientParticulier</class>
+		<class>sopra.model.ClientProfessionnel</class>
+		<class>sopra.model.Compagnie</class>
+		<class>sopra.model.CompagnieVol</class>
+		<class>sopra.model.Escale</class>
+		<class>sopra.model.Passager</class>
+		<class>sopra.model.Reservation</class>
+		<class>sopra.model.Ville</class>
+		<class>sopra.model.Vol</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver"

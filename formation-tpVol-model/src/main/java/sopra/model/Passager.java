@@ -1,16 +1,33 @@
-package tpVol;
+package sopra.model;
 
 import java.util.Date;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table
 public class Passager {
 
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private String prenom;
 	private Date dtNaissance;
 	private String nationalite;
 	private String nbIdentite;
 	private String specificite;
+	@Embedded
 	private Coordonnee coordonnees;
+	@OneToOne(mappedBy = "passager")
 	private Reservation reservation;
 	
 	

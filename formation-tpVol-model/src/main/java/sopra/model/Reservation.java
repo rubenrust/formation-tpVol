@@ -1,15 +1,37 @@
-package tpVol;
+package sopra.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table
 public class Reservation {
 
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
 	private String nbReservation;
 	private String statut;
 	private float prix;
 	private String place;
 	private String classe;
 	private int nbBagage;
+	@ManyToOne
+	@JoinColumn(name = "vol_id")
 	private Vol vol;
+	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
+	@OneToOne
+	@JoinColumn(name = "passager_id")
 	private Passager passager;
 	
 	

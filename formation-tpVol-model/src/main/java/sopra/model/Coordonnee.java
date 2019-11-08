@@ -1,5 +1,8 @@
-package tpVol;
+package sopra.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Coordonnee {
 
 	private String ville;
